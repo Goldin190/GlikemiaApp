@@ -1,0 +1,8 @@
+C:\Users\Maciej\source\repos\GlikemiaProject\GlikemiaApp\bin\Debug\GlikemiaApp.exe.config
+C:\Users\Maciej\source\repos\GlikemiaProject\GlikemiaApp\bin\Debug\GlikemiaApp.exe
+C:\Users\Maciej\source\repos\GlikemiaProject\GlikemiaApp\bin\Debug\GlikemiaApp.pdb
+C:\Users\Maciej\source\repos\GlikemiaProject\GlikemiaApp\obj\Debug\GlikemiaApp.csprojAssemblyReference.cache
+C:\Users\Maciej\source\repos\GlikemiaProject\GlikemiaApp\obj\Debug\GlikemiaApp.csproj.CoreCompileInputs.cache
+C:\Users\Maciej\source\repos\GlikemiaProject\GlikemiaApp\obj\Debug\GlikemiaApp.exe
+C:\Users\Maciej\source\repos\GlikemiaProject\GlikemiaApp\obj\Debug\GlikemiaApp.pdb
+C:\Users\Maciej\source\repos\GlikemiaProject\GlikemiaApp\bin\Debug\XML\Pomiary.xml
