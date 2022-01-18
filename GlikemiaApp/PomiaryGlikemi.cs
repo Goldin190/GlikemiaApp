@@ -112,10 +112,24 @@ namespace GlikemiaApp
             Console.WriteLine("Podaj godzinę pomiaru(hh:mm)");
             while (!Validate_Input_Time(Console.ReadLine())) ;
         }
+        public void Set_Date(string dateString)
+        {
+            this.data = DateTime.Parse(dateString);
+        }
 
         public DateTime Get_Date()
         {
             return data;
+        }
+
+        public void ShowPomiar()
+        {
+            //"id          :" + id          + "\n" + Add for debug
+            Console.WriteLine("data        :" + Get_Date()  + "\n" +
+                              "cukier      :" + cukier      + "\n" +
+                              "opis        :" + opis        + "\n" +
+                              "DodatkoweJI :" + dodatkoweJI + "\n");
+
         }
     }
 }

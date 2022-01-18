@@ -10,6 +10,7 @@ namespace GlikemiaApp
     {
         XmlGlikemiaHandler xmlHandler;
         private int userMenuChoice;
+
         private void DebugStop()
         {
             Console.WriteLine("Press Enter...");
@@ -137,7 +138,11 @@ namespace GlikemiaApp
                         }
                     case 2:
                         {
-                            //ShowPomiary
+                            while (SubDisplay()) ;
+                            XmlGlikemiaHandler xml = new XmlGlikemiaHandler();
+                            PomiaryGlikemi pomiar = (PomiaryGlikemi)xml.DeserializeObject(2);
+                            pomiar.ShowPomiar();
+                            Console.ReadLine();
                             break;
                         }
                     case 0:
@@ -152,6 +157,39 @@ namespace GlikemiaApp
                 return true;
             }
             return false;
+        }
+        private bool SubDisplay()
+        {
+            Console.Clear();
+            Console.WriteLine("1. Pokarz wsztyskie pomiary");
+            Console.WriteLine("2. Pokarz pojedynczy pomiar");
+            Console.WriteLine("0. Wyjdź.");
+            if(Validate_Input(new List<int>() {1,2,0 }, 0))
+            {
+                switch (userMenuChoice)
+                {
+                    case 1:
+                        {
+                            while (FilterDisplay()) ;
+                            break;
+                        }
+                    case 2:
+                        {
+
+                            break;
+                        }
+                    case 0:
+                        {
+                            return false;
+                        }
+                }
+                return true;
+            }
+            return true;
+        }
+        private bool FilterDisplay()
+        {
+
         }
     }
 }
