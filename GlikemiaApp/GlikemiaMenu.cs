@@ -58,10 +58,10 @@ namespace GlikemiaApp
                 Console.Clear();
                 int input;
                 bool isWrong = false;
-                //getId and assignId
-
-                pomiar.id = 0;
+                
+                pomiar.id = xmlHandler.DeserializeLastObject().id+1;
                 pomiar.Set_Date();
+
                 do
                 {
                     Console.WriteLine("Podaj cukier");
@@ -156,24 +156,54 @@ namespace GlikemiaApp
             {
                 return true;
             }
-            return false;
+        }
+
+        private bool Validate_Date(string dateString)
+        {
+            if (!dateString.Contains("-"))
+            {
+                return false;
+            }
+            else
+            {
+
+            }
+            return true;
         }
         private bool SubDisplay()
         {
             Console.Clear();
-            Console.WriteLine("1. Pokarz wsztyskie pomiary");
-            Console.WriteLine("2. Pokarz pojedynczy pomiar");
+            Console.WriteLine("1. Pokarz pomiary z przedziału czasowego");
+            Console.WriteLine("2. Pokarz pomiary z konkretnego dnia");
+            Console.WriteLine("3. Pokarz pomiar z największym cukrem");
+            Console.WriteLine("4. Pokarz pomiar z największym cukrem w przedziale czasowym");
+            Console.WriteLine("5. Pokarz pomiar z największym cukrem konkretnego dnia");
             Console.WriteLine("0. Wyjdź.");
-            if(Validate_Input(new List<int>() {1,2,0 }, 0))
+            if(Validate_Input(new List<int>() {1,2,3,4,5,0 }, 0))
             {
                 switch (userMenuChoice)
                 {
                     case 1:
                         {
-                            while (FilterDisplay()) ;
+                            
                             break;
                         }
                     case 2:
+                        {
+
+                            break;
+                        }
+                    case 3:
+                        {
+
+                            break;
+                        }
+                    case 4:
+                        {
+
+                            break;
+                        }
+                    case 5:
                         {
 
                             break;
@@ -187,9 +217,6 @@ namespace GlikemiaApp
             }
             return true;
         }
-        private bool FilterDisplay()
-        {
 
-        }
     }
 }
