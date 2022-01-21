@@ -9,6 +9,7 @@ namespace GlikemiaApp
     interface IMenu
     {
         void Show_Error_Message(string msg);
+        void Hold_Execution();
         bool Validate_Input(List<int> range, int exitValue);
         bool Display();
     }

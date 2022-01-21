@@ -122,7 +122,7 @@ namespace GlikemiaApp
             return data;
         }
 
-        public void ShowPomiar()
+        public void Show_Pomiar()
         {
             //"id          :" + id          + "\n" + Add for debug
             Console.WriteLine("data        :" + Get_Date()  + "\n" +

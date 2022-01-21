@@ -7,8 +7,50 @@
     <DodatkoweJI>0</DodatkoweJI>
   </Pomiar>
   <Pomiar id="2">
-    <Data>09-01-2022 11:20:00</Data>
+    <Data>9-01-2022 11:20:00</Data>
     <Cukier>120</Cukier>
+    <Opis>Lotnik jajko</Opis>
+    <DodatkoweJI>0</DodatkoweJI>
+  </Pomiar>
+  <Pomiar id="3">
+    <Data>10-01-2022 11:20:00</Data>
+    <Cukier>95</Cukier>
+    <Opis>Lotnik jajko</Opis>
+    <DodatkoweJI>0</DodatkoweJI>
+  </Pomiar>
+  <Pomiar id="4">
+    <Data>10-01-2022 11:20:00</Data>
+    <Cukier>150</Cukier>
+    <Opis>Lotnik jajko</Opis>
+    <DodatkoweJI>0</DodatkoweJI>
+  </Pomiar>
+  <Pomiar id="5">
+    <Data>10-01-2022 11:20:00</Data>
+    <Cukier>300</Cukier>
+    <Opis>Lotnik jajko</Opis>
+    <DodatkoweJI>0</DodatkoweJI>
+  </Pomiar>
+  <Pomiar id="6">
+    <Data>11-01-2022 11:20:00</Data>
+    <Cukier>87</Cukier>
+    <Opis>Lotnik jajko</Opis>
+    <DodatkoweJI>0</DodatkoweJI>
+  </Pomiar>
+  <Pomiar id="7">
+    <Data>11-01-2022 11:20:00</Data>
+    <Cukier>123</Cukier>
+    <Opis>Lotnik jajko</Opis>
+    <DodatkoweJI>0</DodatkoweJI>
+  </Pomiar>
+  <Pomiar id="8">
+    <Data>11-01-2022 11:20:00</Data>
+    <Cukier>120</Cukier>
+    <Opis>Lotnik jajko</Opis>
+    <DodatkoweJI>0</DodatkoweJI>
+  </Pomiar>
+  <Pomiar id="9">
+    <Data>10-01-2022 11:20:00</Data>
+    <Cukier>100</Cukier>
     <Opis>Lotnik jajko</Opis>
     <DodatkoweJI>0</DodatkoweJI>
   </Pomiar>

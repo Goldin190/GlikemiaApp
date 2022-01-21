@@ -45,19 +45,19 @@ namespace GlikemiaApp
             List<PomiaryGlikemi> pomiary = new List<PomiaryGlikemi>();
             XDocument document = new XDocument();
             document = XDocument.Load(path);
-            PomiaryGlikemi pomiarObject = new PomiaryGlikemi();
+            
 
-            foreach (XElement pomiar in document.Descendants("Pomiar"))
+            foreach (XElement pomiar in document.Descendants("Pomiar").ToList())
             {
+                PomiaryGlikemi pomiarObject = new PomiaryGlikemi();
                 int.TryParse(pomiar.Attribute("id").Value, out pomiarObject.id);
                 int.TryParse(pomiar.Element("Cukier").Value, out pomiarObject.cukier);
                 pomiarObject.opis = pomiar.Element("Opis").Value;
                 int.TryParse(pomiar.Element("DodatkoweJI").Value, out pomiarObject.dodatkoweJI);
                 pomiarObject.Set_Date(pomiar.Element("Data").Value);
 
-                pomiar.Add(pomiarObject);
+                pomiary.Add(pomiarObject);   
             }
-
             return pomiary;
         }
         public object DeserializeObject(int id)
