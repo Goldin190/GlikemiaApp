@@ -116,8 +116,6 @@ namespace GlikemiaApp
                     "\n2.Nie");
 
                 while (!Validate_Input(new List<int>() { 1,2},1)) ;
-                Console.WriteLine(userMenuChoice.ToString());
-                this.DebugStop();
             } while (userMenuChoice != 1);
             return pomiar;
         }
@@ -135,8 +133,10 @@ namespace GlikemiaApp
                         {
                             //add to XML
                             PomiaryGlikemi pomiar = Add_Pomiar();
-                            Console.WriteLine("Pomiar data i cukier :\n" + pomiar.Get_Date().ToString() + "\n" + pomiar.cukier.ToString());
-                            this.DebugStop();
+                            xmlHandler.DodajPomiar(xmlHandler.SerializeObject(pomiar));
+                            Console.Clear();
+                            Console.WriteLine("Dodano pomiar");
+                            Hold_Execution();
                             break;
                         }
                     case 2:

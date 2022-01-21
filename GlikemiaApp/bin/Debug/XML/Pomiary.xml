@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Pomiary>
   <Pomiar id="1">
     <Data>18-01-2022 20:30:00</Data>
@@ -52,6 +52,12 @@
     <Data>10-01-2022 11:20:00</Data>
     <Cukier>100</Cukier>
     <Opis>Lotnik jajko</Opis>
+    <DodatkoweJI>0</DodatkoweJI>
+  </Pomiar>
+  <Pomiar id="9">
+    <Data>2022-01-04T11:32:00</Data>
+    <Cukier>67</Cukier>
+    <Opis>Przed posiłkiem</Opis>
     <DodatkoweJI>0</DodatkoweJI>
   </Pomiar>
 </Pomiary>
