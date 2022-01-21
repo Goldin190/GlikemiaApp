@@ -9,7 +9,12 @@ namespace GlikemiaApp
     class MainMenu : IMenu
     {
         private int userMenuChoice;
-        
+
+        public void Hold_Execution()
+        {
+            Console.WriteLine("Kilknij Enter aby kontynuować");
+            Console.ReadLine();
+        }
         public void Show_Error_Message(string msg)
         {
             Console.WriteLine("Wrong input:");
