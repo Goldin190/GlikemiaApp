@@ -60,4 +60,16 @@
     <Opis>Przed posiłkiem</Opis>
     <DodatkoweJI>0</DodatkoweJI>
   </Pomiar>
+  <Pomiar id="9">
+    <Data>2022-01-04T11:53:00</Data>
+    <Cukier>56</Cukier>
+    <Opis></Opis>
+    <DodatkoweJI>0</DodatkoweJI>
+  </Pomiar>
+  <Pomiar id="10">
+    <Data>2022-01-04T15:30:00</Data>
+    <Cukier>58</Cukier>
+    <Opis>Po posiłku</Opis>
+    <DodatkoweJI>0</DodatkoweJI>
+  </Pomiar>
 </Pomiary>

@@ -26,7 +26,7 @@ namespace GlikemiaApp
              *      <DodatkoweJI>0</DodatkoweJI>
              * </Pomiar>
             */
-            XElement nowyPomiar = new XElement("Pomiar",new XAttribute("id",DeserializeLastObject().id),
+            XElement nowyPomiar = new XElement("Pomiar",new XAttribute("id",DeserializeLastObject().id+1),
                 new XElement("Data", pomiar.Get_Date()),
                 new XElement("Cukier",pomiar.cukier),
                 new XElement("Opis",pomiar.opis),
@@ -38,6 +38,8 @@ namespace GlikemiaApp
             XDocument document = new XDocument();
             document = XDocument.Load(path);
             document.Descendants("Pomiar").Last().AddAfterSelf(pomiar);
+            StringBuilder sb = new StringBuilder();
+
             document.Save(path);
         }
         public List<PomiaryGlikemi> DeserializeObjectsAll()

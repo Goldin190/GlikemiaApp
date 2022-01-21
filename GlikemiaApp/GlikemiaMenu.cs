@@ -143,9 +143,6 @@ namespace GlikemiaApp
                         {
                             while (SubDisplay()) ;
                             XmlGlikemiaHandler xml = new XmlGlikemiaHandler();
-                            PomiaryGlikemi pomiar = (PomiaryGlikemi)xml.DeserializeObject(2);
-                            pomiar.Show_Pomiar();
-                            Console.ReadLine();
                             break;
                         }
                     case 0:
