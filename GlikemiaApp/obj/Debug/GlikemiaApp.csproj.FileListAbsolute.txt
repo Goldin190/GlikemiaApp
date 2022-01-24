@@ -6,3 +6,7 @@ C:\Users\Maciej\source\repos\GlikemiaProject\GlikemiaApp\obj\Debug\GlikemiaApp.c
 C:\Users\Maciej\source\repos\GlikemiaProject\GlikemiaApp\obj\Debug\GlikemiaApp.exe
 C:\Users\Maciej\source\repos\GlikemiaProject\GlikemiaApp\obj\Debug\GlikemiaApp.pdb
 C:\Users\Maciej\source\repos\GlikemiaProject\GlikemiaApp\bin\Debug\XML\Pomiary.xml
+C:\Users\Maciej\source\repos\GlikemiaProject\GlikemiaApp\bin\Debug\XML\Posiłki.xml
+C:\Users\Maciej\source\repos\GlikemiaProject\GlikemiaApp\bin\Debug\XML\PosiłkiGotowe.xml
+C:\Users\Maciej\source\repos\GlikemiaProject\GlikemiaApp\bin\Debug\XML\PosiłkiZapisane.xml
+C:\Users\Maciej\source\repos\GlikemiaProject\GlikemiaApp\bin\Debug\XML\Potrawy.xml

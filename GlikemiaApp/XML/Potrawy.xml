@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Potrawy>
+  <Potrawa id="1">
+    <Nazwa>Suchary lekkie</Nazwa>
+    <Firma>Sonko</Firma>
+    <Barcode>5902180890509</Barcode>
+    <kcal>359.0</kcal>
+    <Węglowodany>70.6</Węglowodany>
+    <Cukry>10.3</Cukry>
+    <Błonnik>11.5</Błonnik>
+    <Tłuszcz>1.9</Tłuszcz>
+    <Kwtłnas>0.5</Kwtłnas>
+    <Białko>9.0</Białko>
+    <Miara>1</Miara>
+  </Potrawa>
+  <Potrawa id="1">
+    <Nazwa>Suchary lekkie</Nazwa>
+    <Firma>Sonko</Firma>
+    <Barcode>5902180890509</Barcode>
+    <kcal>359.0</kcal>
+    <Węglowodany>72.6</Węglowodany>
+    <Cukry>10.3</Cukry>
+    <Błonnik>11.5</Błonnik>
+    <Tłuszcz>1.9</Tłuszcz>
+    <Kwtłnas>0.5</Kwtłnas>
+    <Białko>9.0</Białko>
+    <Miara>1</Miara>
+  </Potrawa>
+</Potrawy>

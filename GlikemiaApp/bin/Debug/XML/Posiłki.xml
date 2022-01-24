@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Posiłki>
+  <Posiłek id="1">
+    <Potrawa>
+      <id>1</id>
+      <Ilość>100</Ilość>      
+    </Potrawa>
+    <Potrawa>
+      <id>2</id>
+      <ilość>140</ilość>
+    </Potrawa>
+    <Ji>3</Ji>
+    <Data>10-02-2022 11:20:00</Data>
+  </Posiłek>
+  <Posiłek id="2">
+    <Potrawa>
+      <id>2</id>
+      <Ilość>100</Ilość>
+    </Potrawa>
+    <Potrawa>
+      <id>1</id>
+      <ilość>250</ilość>
+    </Potrawa>
+    <Ji>4</Ji>
+    <Data>10-02-2022 14:00:00</Data>
+  </Posiłek>
+</Posiłki>

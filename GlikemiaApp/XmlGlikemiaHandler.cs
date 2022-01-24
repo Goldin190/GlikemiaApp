@@ -26,7 +26,7 @@ namespace GlikemiaApp
              *      <DodatkoweJI>0</DodatkoweJI>
              * </Pomiar>
             */
-            XElement nowyPomiar = new XElement("Pomiar",new XAttribute("id",DeserializeLastObject().id+1),
+            XElement nowyPomiar = new XElement("Pomiar",new XAttribute("id",DeserializeLastObject().id),
                 new XElement("Data", pomiar.Get_Date()),
                 new XElement("Cukier",pomiar.cukier),
                 new XElement("Opis",pomiar.opis),

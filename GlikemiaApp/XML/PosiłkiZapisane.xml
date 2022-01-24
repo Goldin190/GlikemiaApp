@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Posiłki>
+  <Posiłek id="1">
+    <IdPotraw>
+      <id>1</id>
+      <id>2</id>
+    </IdPotraw>
+</Posiłek>
+  <Posiłek id="2">
+    <IdPotraw>
+      <id>2</id>    
+      <id>1</id>
+    </IdPotraw>
+  </Posiłek>
+</Posiłki>
