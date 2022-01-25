@@ -42,6 +42,21 @@ namespace GlikemiaApp
 
             document.Save(path);
         }
+        public void EditPomiar(XElement pomiar)
+        {
+            XDocument document = new XDocument();
+            document = XDocument.Load(path);
+            XElement node = document
+                .Element("Pomiary")
+                .Elements("Pomiar")
+                .Where(p => p.Attribute("id").Value == pomiar.Attribute("id").Value)
+                .Single();
+            foreach(XElement nodeElement in node.Elements())
+            {
+                nodeElement.Value = pomiar.Element(nodeElement.Name).Value;
+            }
+            document.Save(path);
+        }
         public List<PomiaryGlikemi> DeserializeObjectsAll()
         {
             List<PomiaryGlikemi> pomiary = new List<PomiaryGlikemi>();

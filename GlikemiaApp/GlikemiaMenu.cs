@@ -16,12 +16,6 @@ namespace GlikemiaApp
             Console.WriteLine("Kilknij Enter aby kontynuować");
             Console.ReadLine();
         }
-
-        private void DebugStop()
-        {
-            Console.WriteLine("Press Enter...");
-            Console.ReadLine();
-        }
         public GlikemiaMenu()
         {
             xmlHandler = new XmlGlikemiaHandler();
@@ -141,7 +135,7 @@ namespace GlikemiaApp
                         }
                     case 2:
                         {
-                            while (SubDisplay()) ;
+                            while (Sub_Display()) ;
                             XmlGlikemiaHandler xml = new XmlGlikemiaHandler();
                             break;
                         }
@@ -190,15 +184,16 @@ namespace GlikemiaApp
                 return false;
             }
         }
-        private void PrintResult(int pos,List<PomiaryGlikemi> pomiary) 
+        private void Print_Result(int pos,List<PomiaryGlikemi> pomiary) 
         {
             Console.Clear();
             for (int i = pos; i < pomiary.Count && i < (pos+5); i++)
             {
+                Console.WriteLine("nr. {0}",i);
                 pomiary[i].Show_Pomiar();
             }
         }
-        private void PrintResult(List<PomiaryGlikemi> pomiary,string message)
+        private void Print_Result(List<PomiaryGlikemi> pomiary,string message)
         {
             Console.Clear();
             Console.WriteLine(message);
@@ -208,17 +203,17 @@ namespace GlikemiaApp
             }
             
         }
-        private void ShowResults(List<PomiaryGlikemi> pomiary)
+        private void Show_Results(List<PomiaryGlikemi> pomiary)
         {
             int currentPosition = 0;
             bool exit = false;
             Console.WriteLine(pomiary.Count);
-            PrintResult(currentPosition, pomiary);
+            Print_Result(currentPosition, pomiary);
             Console.WriteLine("1. Następne 5    2. Poprzednie 5     0. Wyjdź");
             do
             {
                 
-                if (Validate_Input(new List<int>() { 1, 2, 0 }, 0))
+                if (Validate_Input(new List<int>() { 1, 2, 3, 0 }, 0))
                 {
                     switch (userMenuChoice)
                     {
@@ -227,7 +222,7 @@ namespace GlikemiaApp
                                 if (pomiary.Count >= currentPosition + 5)
                                 {
                                     currentPosition += 5;
-                                    PrintResult(currentPosition, pomiary);
+                                    Print_Result(currentPosition, pomiary);
                                 }
                                 exit = false;
                                 break;
@@ -237,9 +232,20 @@ namespace GlikemiaApp
                                 if (currentPosition - 5 >= 0)
                                 {
                                     currentPosition -= 5;
-                                    PrintResult(currentPosition, pomiary);
+                                    Print_Result(currentPosition, pomiary);
                                 }
                                 exit = false;
+                                break;
+                            }
+                        case 3:
+                            {
+                                if(Validate_Input(new List<int>() { currentPosition,currentPosition+1,currentPosition+2,currentPosition+3,currentPosition+4 }, 0))
+                                {
+                                    if(userMenuChoice < pomiary.Count())
+                                    {
+                                        
+                                    }
+                                }
                                 break;
                             }
                         case 0:
@@ -249,11 +255,37 @@ namespace GlikemiaApp
                             }
                     }   
                 }
-                Console.WriteLine("1. Następne 5    2. Poprzednie 5     0. Wyjdź");
+                Console.WriteLine("1. Następne 5    2. Poprzednie 5    3. Edit   0. Wyjdź");
             } while (!exit);
             Console.Clear();
         }
-        private DateTime GetDateDialouge(string dateType)
+        private void Edit_Pomiar(PomiaryGlikemi pomiarToEdit)
+        {
+            pomiarToEdit.Show_Pomiar();
+            Console.WriteLine("Opcje edycji :");
+            Console.WriteLine("1. Data  2. Cukier  3. Opis  Dodatkowe Ji 0. Wyjdź ");
+            if(Validate_Input(new List<int>() { 1, 2, 3, 0 }, 0))
+            {
+                switch (userMenuChoice)
+                {
+                    case 1:
+                        {
+                            string data;
+                            do
+                            {
+                                Console.WriteLine("Aktualna data : {0}",pomiarToEdit.Get_Date());
+                                Console.WriteLine("Podaj nową datę :");
+                                data = Console.ReadLine();
+                            } while (Validate_Date(data));
+
+                            pomiarToEdit.Set_Date(data);
+                            break;
+                        }
+                }
+            }
+
+        }
+        private DateTime Get_Date_Dialouge(string dateType)
         {
             string dateString;
             do
@@ -264,7 +296,7 @@ namespace GlikemiaApp
             } while (!Validate_Date(dateString));
             return DateTime.Parse(dateString);
         }
-        private bool SubDisplay()
+        private bool Sub_Display()
         {
             Console.Clear();
             Console.WriteLine("1. Pokarz pomiary z przedziału czasowego");
@@ -281,9 +313,9 @@ namespace GlikemiaApp
                             DateTime startDate, endDate;
                             do
                             {
-                                startDate = GetDateDialouge("datę początkową");
+                                startDate = Get_Date_Dialouge("datę początkową");
 
-                                endDate = GetDateDialouge("datę końcową");
+                                endDate = Get_Date_Dialouge("datę końcową");
                                 if (startDate > endDate)
                                 {
                                     Console.WriteLine("Data początkowa musi być wcześniejsza niż końcowa");
@@ -297,7 +329,7 @@ namespace GlikemiaApp
                                                                    select pomiar).ToList();    
                             if(pomiaryGlikemi.Count > 0)
                             {
-                                ShowResults(pomiaryGlikemi);
+                                Show_Results(pomiaryGlikemi);
                             }
                             else
                             {
@@ -310,14 +342,14 @@ namespace GlikemiaApp
                     case 2:
                         {
                             DateTime startDate;
-                            startDate = GetDateDialouge("datę");
+                            startDate = Get_Date_Dialouge("datę");
                             // wyszukanie za pomocą LINQ z wszystkich pomiarów wybieramy te w przedziale czasowym zdefiniowanym przez użytkownika.
                             List<PomiaryGlikemi> pomiaryGlikemi = (from pomiar in xmlHandler.DeserializeObjectsAll()
                                                                    where pomiar.Get_Date().Date == startDate.Date
                                                                    select pomiar).ToList();
                             if (pomiaryGlikemi.Count > 0)
                             {
-                                ShowResults(pomiaryGlikemi);
+                                Show_Results(pomiaryGlikemi);
                             }
                             else
                             {
@@ -332,9 +364,9 @@ namespace GlikemiaApp
                             DateTime startDate, endDate;
                             do
                             {
-                                startDate = GetDateDialouge("datę początkową");
+                                startDate = Get_Date_Dialouge("datę początkową");
 
-                                endDate = GetDateDialouge("datę końcową");
+                                endDate = Get_Date_Dialouge("datę końcową");
                                 if(startDate > endDate)
                                 {
                                     Console.WriteLine("Data początkowa musi być wcześniejsza niż końcowa");
@@ -349,7 +381,7 @@ namespace GlikemiaApp
                             if (pomiaryGlikemi.Count > 0)
                             {
                                 pomiaryGlikemi = new List<PomiaryGlikemi>() { pomiaryGlikemi.First(), pomiaryGlikemi.Last() };
-                                PrintResult(pomiaryGlikemi, "pomiary z największym i najniższym cukrem\nw danym okresie :");
+                                Print_Result(pomiaryGlikemi, "pomiary z największym i najniższym cukrem\nw danym okresie :");
                                 Hold_Execution();
                             }
                             else
@@ -363,7 +395,7 @@ namespace GlikemiaApp
                     case 4:
                         {
                             DateTime startDate;
-                            startDate = GetDateDialouge("datę");
+                            startDate = Get_Date_Dialouge("datę");
                             // wyszukanie za pomocą LINQ z wszystkich pomiarów wybieramy te w przedziale czasowym zdefiniowanym przez użytkownika.
                             List<PomiaryGlikemi> pomiaryGlikemi = (from pomiar in xmlHandler.DeserializeObjectsAll()
                                                                    where pomiar.Get_Date().Date == startDate.Date
@@ -371,7 +403,7 @@ namespace GlikemiaApp
                             if (pomiaryGlikemi.Count > 0)
                             {
                                 pomiaryGlikemi = new List<PomiaryGlikemi>() { pomiaryGlikemi.First(), pomiaryGlikemi.Last() };
-                                PrintResult(pomiaryGlikemi, "pomiary z największym i najniższym cukrem\nw dniu :");
+                                Print_Result(pomiaryGlikemi, "pomiary z największym i najniższym cukrem\nw dniu :");
                                 Hold_Execution();
                             }
                             else
